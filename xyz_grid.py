@@ -390,6 +390,8 @@ class Script(scripts.Script):
     def ui(self, is_img2img):
         self.current_axis_options = [x for x in axis_options if type(x) == AxisOption or x.is_img2img == is_img2img]
         
+        if not os.path.isdir('scripts/temp'):
+            os.mkdir('scripts/temp')
         with gr.Row():
             with gr.Column(scale=19):
                 with gr.Row():
